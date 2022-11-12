@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext)
+
+  const handleSignOUT = (e) => {
+    e.preventDefault()
+    logOut()
+  }
 
   const menuItem = <>
     <li className='font-semibold'><Link to={'/'}>Home</Link></li>
@@ -10,7 +17,7 @@ const Header = () => {
   </>
 
   return (
-    <div className="navbar bg-gradient-to-r from-cyan-200 via-sky-400 to-teal-400">
+    <div className="navbar glass bg-gradient-to-r from-cyan-200 via-sky-400 to-teal-400">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -20,15 +27,18 @@ const Header = () => {
             {menuItem}
           </ul>
         </div>
-        <Link to={'/'} className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+        <Link to={'/'} className="btn btn-ghost font-serif normal-case text-xl">Adventure Zone</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
-         {menuItem}
+          {menuItem}
         </ul>
       </div>
       <div className="navbar-end">
+        <p>Name:{user?.email}</p>
+        <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link>
         <Link className="btn">Get started</Link>
+
       </div>
     </div>
   );

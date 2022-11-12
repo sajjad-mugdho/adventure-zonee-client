@@ -1,11 +1,13 @@
 import React from 'react';
-import hero from '../../../img/hero.jpg';
+
 import Banner from '../Banner/Banner';
+import Stats from '../Stats/Stats';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <Stats></Stats>
         </div>
     );
 };
