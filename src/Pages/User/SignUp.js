@@ -1,14 +1,17 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import loginImg from '../../img/login.jpg';
-import { FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
-const googleProvider = new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 const SignUp = () => {
-    const {signUpEmail, signUpGoogle} = useContext(AuthContext);
+    const {signUpEmail, signUpGoogle, signInGithub} = useContext(AuthContext);
+
+    const navigate = useNavigate()
 
     const handleSignup = (e) => {
         e.preventDefault()
@@ -22,7 +25,8 @@ const SignUp = () => {
             const user = result.user;
             console.log(user);
         }).catch(err => console.error(err))
-
+        form.reset()
+        
 
     }
     const handleGoogle = e => {
@@ -30,7 +34,19 @@ const SignUp = () => {
         signUpGoogle(googleProvider).then(result => {
             const user = result.user;
             console.log(user);
+            navigate('/')
         }).catch(err => console.error(err))
+        
+    }
+
+    const handleGithub = e => {
+        e.preventDefault()
+        signInGithub(githubProvider).then(result => {
+            const user = result.user;
+            console.log(user);
+            navigate('/')
+        }).catch(err => console.error(err))
+        
 
     }
     return (
@@ -79,8 +95,8 @@ const SignUp = () => {
                     <p className='text-center my-5'>Or Sign Up with</p>
                     <div className='flex justify-center'>
                         <button className='btn btn-outline ml-3 my-5' onClick={handleGoogle}><FaGoogle></FaGoogle></button>
-                        <button className='btn btn-outline ml-3 my-5' ><FaGoogle></FaGoogle></button>
-                        <button className='btn btn-outline ml-3 my-5'><FaGoogle></FaGoogle></button>
+                        <button className='btn btn-outline ml-3 my-5' onClick={handleGithub} ><FaGithub></FaGithub></button>
+                        
                     </div>
                     <p className='text-center'>Already Have An account? Please <Link to={'/login'} className='text-orange-600 font-bold'>Login</Link></p>
                 </div>

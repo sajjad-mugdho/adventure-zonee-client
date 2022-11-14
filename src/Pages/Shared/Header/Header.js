@@ -11,9 +11,9 @@ const Header = () => {
   }
 
   const menuItem = <>
-    <li className='font-semibold'><Link to={'/'}>Home</Link></li>
-    <li className='font-semibold'><Link to={'/login'}>Login</Link></li>
-    <li className='font-semibold'><Link to={'/blog'}>Blog</Link></li>
+    <li className='font-semibold mr-2'><Link to={'/'}>Home</Link></li>
+    <li className='font-semibold mr-2'><Link to={'/blog'}>Blog</Link></li>
+    {user?.email ? <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link> : <li className='font-semibold mr-2'><Link to={'/login'}>Login</Link></li>}
   </>
 
   return (
@@ -29,14 +29,14 @@ const Header = () => {
         </div>
         <Link to={'/'} className="btn btn-ghost font-serif normal-case text-xl">Adventure Zone</Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           {menuItem}
         </ul>
       </div>
       <div className="navbar-end">
-        <p>Name:{user?.email}</p>
-        <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link>
+
+
         <Link className="btn">Get started</Link>
 
       </div>
