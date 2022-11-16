@@ -1,0 +1,75 @@
+[
+    {
+        "service_id": "01",
+        "title": "W Fort Lauderdale",
+        "img": "https://images.trvl-media.com/hotels/1000000/200000/198300/198225/b71ece4c.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Located on the beach, W Fort Lauderdale is in East Fort Lauderdale, a neighborhood in Fort Lauderdale. While the natural beauty of Fort Lauderdale Beach and Hollywood Beach can be enjoyed by anyone, those looking for an activity can check out Port Everglades. Bonnet House Museum and Gardens and International Swimming Hall of Fame are also worth visiting. With kayaking, scuba diving, and snorkeling nearby, you'll find plenty of adventures in the water.",
+        "price": "1,690",
+        "raiting": "4.5"
+    },
+    {
+        "service_id": "02",
+        "title": "Virgin Hotels Las Vegas, Curio Collection by Hilton",
+        "img": "https://images.trvl-media.com/hotels/3000000/2340000/2335300/2335216/0343e4c4.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "In the city center, Virgin Hotels Las Vegas, Curio Collection by Hilton is in an area with good airport proximity. Las Vegas Premium Outlets North and Fremont Street Experience are worth checking out if shopping is on the agenda, while those wishing to experience the area's natural beauty can explore Lake Las Vegas and Red Rock Canyon National Conservation Area. Looking to enjoy an event or a game? See what's going on at Thomas and Mack Center or T-Mobile Arena. Spend some time exploring the area's activities, including outlet shopping and golfing.",
+        "price": "422",
+        "raiting": "4.2"
+    },
+    {
+        "service_id": "03",
+        "title": "Red Rock Casino, Resort and Spa",
+        "img": "https://images.trvl-media.com/hotels/2000000/1390000/1380200/1380135/af80ec5b.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Located in Summerlin South neighborhood, Red Rock Casino, Resort and Spa is connected to a shopping center. Travelers who have shopping on the agenda can visit Downtown Summerlin and Fremont Street Experience, while those looking for another kind of activity may want to check out City National Arena. Looking to enjoy an event or a game? See what's going on at Allegiant Stadium or T-Mobile Arena. Break out the clubs and hit the links with a golf course nearby, or seek out an adventure with mountain biking, hiking/biking trails, and rock climbing.",
+        "price": "462",
+        "raiting": "4.3"
+    },
+    {
+        "service_id": "04",
+        "title": "Hilton Grand Vacations Club on the Las Vegas Strip",
+        "img": "https://images.trvl-media.com/hotels/1000000/930000/921800/921745/6565d057.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Hilton Grand Vacations Club on the Las Vegas Strip is located in Las Vegas Strip, a neighborhood in Las Vegas, and is on the Strip and near the airport. Travelers who have shopping on the agenda can visit Fashion Show Mall and Fremont Street Experience. Looking to enjoy an event or a game? See what's going on at T-Mobile Arena or Thomas and Mack Center. Practice your golf swing on a nearby course, or enjoy other activities in the great outdoors, such as skydiving, hiking/biking trails, and mountain biking in the area.",
+        "price": "444",
+        "raiting": "4.3"
+    },
+    {
+        "service_id": "05",
+        "title": "Las Vegas Hilton at Resorts World",
+        "img": "https://images.trvl-media.com/hotels/61000000/60890000/60884500/60884491/w3840h2877x0y3-d7122a57.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Las Vegas Hilton at Resorts World is located in Las Vegas Strip, a neighborhood in Las Vegas, and is in the entertainment district and near the airport. Fashion Show Mall and Las Vegas Premium Outlets North are worth checking out if shopping is on the agenda, while those wishing to experience the area's popular attractions can visit AREA15. Looking to enjoy an event or a game? See what's going on at T-Mobile Arena or Allegiant Stadium.",
+        "price": "491",
+        "raiting": "4.3"
+    },
+    {
+        "service_id": "06",
+        "title": "Planet Hollywood Resort & Casino",
+        "img": "https://images.trvl-media.com/hotels/1000000/20000/15200/15117/165701b1.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Located in Las Vegas, Planet Hollywood Resort & Casino is on the Strip and near the airport. Miracle Mile Shops and LINQ Promenade are worth checking out if shopping is on the agenda, while those wishing to experience the area's popular attractions can visit High Roller. Looking to enjoy an event or a game? See what's going on at T-Mobile Arena or Allegiant Stadium. Practice your golf swing on a nearby course, or enjoy other activities in the great outdoors, such as ziplining, rock climbing, and mountain biking in the area. Guests love the resort's location for the sightseeing.",
+        "price": "500",
+        "raiting": "4.3"
+    },
+    {
+        "service_id": "07",
+        "title": "Bellagio",
+        "img": "https://images.trvl-media.com/hotels/1000000/150000/140600/140596/b4cfa95d.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "Bellagio is located in Las Vegas Strip, a neighborhood in Las Vegas, and is on the Strip and near the airport. Check out an event or a game at T-Mobile Arena, and consider making time for Bellagio Conservatory & Botanical Gardens, a top attraction not to be missed. Guests appreciate the hotel's central location.",
+        "price": "600",
+        "raiting": "4.0"
+    },
+    {
+        "service_id": "08",
+        "title": "MGM Grand Hotel & Casino",
+        "img": "https://images.trvl-media.com/hotels/1000000/20000/12700/12628/6e079c95.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "On the Strip and near a metro station, MGM Grand Hotel & Casino is in an area with good airport proximity. Looking to enjoy an event or a game? See what's going on at T-Mobile Arena or Allegiant Stadium. Spend some time exploring the area's activities, including golfing. Guests appreciate the resort's central location.",
+        "price": "700",
+        "raiting": "3.8"
+    },
+    {
+        "service_id": "09",
+        "title": "El Cortez Hotel and Casino - 21 and Over",
+        "img": "https://images.trvl-media.com/hotels/1000000/910000/906000/905990/8be8cd79.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+        "description": "El Cortez Hotel and Casino - 21 and Over is located in Downtown Las Vegas, a neighborhood in Las Vegas, and is in the entertainment district. Mob Museum and The Neon Museum are cultural highlights, and travelers looking to shop may want to visit Fremont Street Experience and Downtown Container Park. Looking to enjoy an event or a game? See what's going on at T-Mobile Arena or Allegiant Stadium. Spend some time exploring the area's activities, including golfing. Guests love the hotel's location for the sightseeing.",
+        "price": "800",
+        "raiting": "4.7c"
+    }
+
+]
