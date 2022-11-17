@@ -13,7 +13,13 @@ const Header = () => {
   const menuItem = <>
     <li className='font-semibold mr-2'><Link to={'/'}>Home</Link></li>
     <li className='font-semibold mr-2'><Link to={'/blog'}>Blog</Link></li>
-    {user?.email ? <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link> : <li className='font-semibold mr-2'><Link to={'/login'}>Login</Link></li>}
+    {user?.email ?
+      <>
+          <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link> 
+          <img className='w-10' src={user?.photoURL} alt="" />
+      </>
+      :
+      <li className='font-semibold mr-2'><Link to={'/login'}>Login</Link></li>}
   </>
 
   return (

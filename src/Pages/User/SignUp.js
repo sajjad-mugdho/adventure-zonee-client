@@ -9,25 +9,41 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
 const SignUp = () => {
-    const {signUpEmail, signUpGoogle, signInGithub} = useContext(AuthContext);
+    const { signUpEmail, updateUserProfile, signUpGoogle, signInGithub } = useContext(AuthContext);
 
     const navigate = useNavigate()
 
     const handleSignup = (e) => {
         e.preventDefault()
-        const form = e.target; 
+        const form = e.target;
         const name = form.name.value;
-        const photoURL =form.photoURL.value;
+        const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log('Name:', name,email, 'email',photoURL, 'photoURL', password,'password' );
+        
+
         signUpEmail(email, password).then(result => {
             const user = result.user;
             console.log(user);
+            handleUpdateUser(name, photoURL)
+            form.reset()
         }).catch(err => console.error(err))
-        form.reset()
         
 
+
+    }
+
+
+    const handleUpdateUser = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL,
+        }
+        updateUserProfile(profile).then(result => {
+            const user = result.user;
+            console.log(user);
+        }).catch(err => console.error(err))
+        
     }
     const handleGoogle = e => {
         e.preventDefault()
@@ -36,7 +52,7 @@ const SignUp = () => {
             console.log(user);
             navigate('/')
         }).catch(err => console.error(err))
-        
+
     }
 
     const handleGithub = e => {
@@ -46,7 +62,7 @@ const SignUp = () => {
             console.log(user);
             navigate('/')
         }).catch(err => console.error(err))
-        
+
 
     }
     return (
@@ -96,7 +112,7 @@ const SignUp = () => {
                     <div className='flex justify-center'>
                         <button className='btn btn-outline ml-3 my-5' onClick={handleGoogle}><FaGoogle></FaGoogle></button>
                         <button className='btn btn-outline ml-3 my-5' onClick={handleGithub} ><FaGithub></FaGithub></button>
-                        
+
                     </div>
                     <p className='text-center'>Already Have An account? Please <Link to={'/login'} className='text-orange-600 font-bold'>Login</Link></p>
                 </div>

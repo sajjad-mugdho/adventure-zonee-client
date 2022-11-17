@@ -7,20 +7,24 @@ const ServiceDetails = () => {
 
 
     return (
-        <div className="card w-2/3 bg-base-100 shadow-xl grid items-center m-20">
-            <figure><img src={img} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">
-                    {title}
-                    <div className="badge badge-secondary">{raiting}</div>
-                </h2>
-                <p>{description}</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Price: ${price}</div>
-                
+        <>
+            <h1 className='text-4xl font-bold my-5 '>Get The Best tourist Services</h1>
+            <p>Find the best tourist services you need to help you successfully meet your project planning goals and deadline</p>
+            <div className="card w-2/3 bg-base-100 shadow-xl grid items-center m-20">
+                <figure><img src={img} alt="Shoes" /></figure>
+                <div className="card-body">
+                    <h2 className="text-left card-title">
+                        {title}
+                        <div className="badge badge-secondary">{raiting}</div>
+                    </h2>
+                    <p className='text-left'>{description}</p>
+                    <div className="card-actions justify-end">
+                        <div className="badge badge-outline bg-red-400">Price: ${price}</div>
+                        <button className="btn btn-primary">Buy Now</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

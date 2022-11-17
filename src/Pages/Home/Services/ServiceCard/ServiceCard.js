@@ -17,7 +17,7 @@ const ServiceCard = ({ service }) => {
                         <FaStar className='text-orange-600 text-1xl text-left font-semibold'></FaStar>
                         <p className='text-orange-600 text-1xl font-semibold'>{raiting}</p>
                     </div>
-                    <Link to={`/services/${_id}`} ><button className="btn btn-primary"> Learn Mores</button> </Link>
+                    <Link to={`/services/${_id}`} ><button className="btn btn-primary">View Details</button> </Link>
                 </div>
             </div>
         </div>
