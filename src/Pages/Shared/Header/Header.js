@@ -15,11 +15,17 @@ const Header = () => {
     <li className='font-semibold mr-2'><Link to={'/blog'}>Blog</Link></li>
     {user?.email ?
       <>
-          <Link onClick={handleSignOUT} className="btn btn-outline">Sign Out</Link> 
-          <img className='w-10' src={user?.photoURL} alt="" />
+        <li className='font-semibold mr-2'><Link to={'/reviews'}>My Reviews</Link></li>
+        <li className='font-semibold mr-2'><Link to={'/add-services'}>Add Service</Link></li>
+        <img className='w-10 rounded-full ' src={user?.photoURL} alt="" />
+        <Link onClick={handleSignOUT} className="btn btn-outline ml-5">Sign Out</Link>
       </>
       :
-      <li className='font-semibold mr-2'><Link to={'/login'}>Login</Link></li>}
+      <>
+        <li className='font-semibold mr-2'><Link to={'/signup'}>Sign Up</Link></li>
+        <li className='nav-end font-semibold mr-2'><Link to={'/login'}>Login</Link></li>
+      </>
+    }
   </>
 
   return (
@@ -40,12 +46,7 @@ const Header = () => {
           {menuItem}
         </ul>
       </div>
-      <div className="navbar-end">
-
-
-        <Link className="btn">Get started</Link>
-
-      </div>
+      
     </div>
   );
 };

@@ -10,7 +10,7 @@ const ServiceDetails = () => {
         <>
             <h1 className='text-4xl font-bold my-5 '>Get The Best tourist Services</h1>
             <p>Find the best tourist services you need to help you successfully meet your project planning goals and deadline</p>
-            <div className="card w-2/3 bg-base-100 shadow-xl grid items-center m-20">
+            <div className="card w-2/3 bg-base-100 shadow-xl flex flex-auto m-20">
                 <figure><img src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="text-left card-title">
