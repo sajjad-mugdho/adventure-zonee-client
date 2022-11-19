@@ -11,20 +11,23 @@ const ServiceDetails = () => {
         e.preventDefault();
         const form = e.target;
         const serviceName = form.serviceName.value;
+        const name = form.name.value;
         const price = form.price.value;
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const rating = form.rating.value;
-        const review = form.review.value;
-        console.log(serviceName, price, photoURL, email, rating, review);
+        const reviewDetails = form.review.value;
+        console.log(serviceName, price, photoURL, email, rating, reviewDetails);
 
         const list = {
             title: serviceName,
+            service: _id,
+            name,
             price,
             photoURL,
             email,
             rating,
-            review,
+            reviewDetails,
 
         }
         fetch('http://localhost:5000/reviews',{
@@ -70,10 +73,11 @@ const ServiceDetails = () => {
                 <form onSubmit={handleReview} className='p-10 my-10 bg-base-200 rounded-xl mx-10' >
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
                         <input name='serviceName' type="text" placeholder="Service Name" defaultValue={title} className="input input-bordered input-primary w-full " />
+                        <input name='name' type="text" placeholder="Name" defaultValue={user?.displayName} className="input input-bordered input-primary w-full " />
                         <input name='price' type="text" placeholder="Price" defaultValue={price} className="input input-bordered input-primary w-full " />
                         <input name='photoURL' type="text" placeholder="PhotoURL" defaultValue={user?.photoURL} className="input input-bordered input-primary w-full" required />
                         <input name='email' type="text" placeholder="Email" defaultValue={user?.email} className="input input-bordered input-primary w-full " required />
-                        <input name='rating' type="text" placeholder="Rating" className="input input-bordered input-primary w-full " required />
+                        <input name='rating' type="number" placeholder="Rating" className="input input-bordered input-primary w-full " required />
                     </div>
                     <textarea name='review' className="textarea textarea-primary w-full py-5 my-5" placeholder="Add Your Review"></textarea>
                     <input type="submit" className='btn btn-outline ' value="Add Review" />
