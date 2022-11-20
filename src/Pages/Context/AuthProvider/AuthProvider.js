@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
     // Store Data
 
     const updateUserProfile = (profile) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, profile)
     }
     // Google

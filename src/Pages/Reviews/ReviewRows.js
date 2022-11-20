@@ -19,7 +19,7 @@ const ReviewRows = ({ review, handleDelete }) => {
                 <div className="card-body">
                     <h2 className="card-title text-left text-cyan-800"><span className='text-2xl'>Service: </span>{title}</h2>
                     <div className="badge badge-secondary font-semibold bg-blue-300">Price: ${price}</div>
-                    <div className="badge badge-secondary">Pending</div>
+                    
                     <div className='text-left'>
                         <img className='rounded-t-full w-12 h-12' src={photoURL} alt="" />
                         <p className='text-lg font-medium'>Name: {name}</p>
@@ -29,7 +29,8 @@ const ReviewRows = ({ review, handleDelete }) => {
                         </p>
                     </div>
 
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-evenly">
+                    <div className="badge badge-secondary my-5">Pending</div>
                         <button onClick={() => handleDelete(_id)} className="btn btn-secondary">Delete</button>
 
                     </div>

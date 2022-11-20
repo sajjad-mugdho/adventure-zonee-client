@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import loginImg from '../../img/login.jpg';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
@@ -11,7 +11,10 @@ const githubProvider = new GithubAuthProvider();
 
 const Login = () => {
     const { loginWithEmail, signUpGoogle, signInGithub } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location?.state?.from?.pathName || '/'
 
 
 
@@ -26,8 +29,8 @@ const Login = () => {
         loginWithEmail(email, password).then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true})
             form.reset();
-
         }).catch(err => console.error(err))
     }
 
@@ -36,7 +39,7 @@ const Login = () => {
         signUpGoogle(googleProvider).then(result => {
             const user = result.user;
             console.log(user);
-            navigate('/')
+            navigate(from, {replace: true})
         }).catch(err => console.error(err))
 
     }
@@ -46,7 +49,7 @@ const Login = () => {
         signInGithub(githubProvider).then(result => {
             const user = result.user;
             console.log(user);
-            navigate('/')
+            navigate(from, {replace: true})
         }).catch(err => console.error(err))
 
 
