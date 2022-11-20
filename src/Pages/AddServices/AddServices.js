@@ -27,7 +27,7 @@ const AddServices = () => {
             description: details
         }
 
-        fetch('http://localhost:5000/service-add', {
+        fetch('https://adventure-zonee-assignment-11-server.vercel.app/service-add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

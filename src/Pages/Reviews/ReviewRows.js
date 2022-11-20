@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 
-const ReviewRows = ({ review, handleDelete }) => {
+
+const ReviewRows = ({ review, handleDelete, handleUpdate }) => {
 
     const [serviceReview, setServiceReview] = useState({});
 
     const { _id, title, name, email, price, photoURL, service, reviewDetails } = review;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://adventure-zonee-assignment-11-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setServiceReview(data))
     }, [service])
@@ -19,7 +19,7 @@ const ReviewRows = ({ review, handleDelete }) => {
                 <div className="card-body">
                     <h2 className="card-title text-left text-cyan-800"><span className='text-2xl'>Service: </span>{title}</h2>
                     <div className="badge badge-secondary font-semibold bg-blue-300">Price: ${price}</div>
-                    
+
                     <div className='text-left'>
                         <img className='rounded-t-full w-12 h-12' src={photoURL} alt="" />
                         <p className='text-lg font-medium'>Name: {name}</p>
@@ -30,9 +30,8 @@ const ReviewRows = ({ review, handleDelete }) => {
                     </div>
 
                     <div className="card-actions justify-evenly">
-                    <div className="badge badge-secondary my-5">Pending</div>
+                        <button onClick={() => handleUpdate(_id)} className="btn btn-ghost btn-xs">lll</button>
                         <button onClick={() => handleDelete(_id)} className="btn btn-secondary">Delete</button>
-
                     </div>
                 </div>
             </div>

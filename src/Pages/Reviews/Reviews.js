@@ -8,16 +8,37 @@ const Reviews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`https://adventure-zonee-assignment-11-server.vercel.app/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user?.email]);
+
+
+    const handleUpdate =(_id) =>{
+        fetch(`https://adventure-zonee-assignment-11-server.vercel.app/reviews/${_id}`,{
+            method: 'PATCH',
+            headers: {
+                'content-type' : 'application.json'
+            },
+            body: JSON.stringify({status: 'Approved'})
+        }).then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if (data.modificationCount > 0) {
+                const remaining = reviews.filter(odr => odr._id !== _id);
+                const approving = reviews.filter(odr => odr._id === _id);
+                approving.status = "Approved";
+                const newReviews = [...remaining, approving];
+                setReviews(newReviews);
+            }
+        })
+    }
 
     const handleDelete = (_id) =>{
         
         const proceed = window.confirm('Do you want to delete this Order?');
         if(proceed){
-            fetch(`http://localhost:5000/reviews/${_id}`, {
+            fetch(`https://adventure-zonee-assignment-11-server.vercel.app/reviews/${_id}`, {
                 method: 'DELETE'
             }).then(res => res.json()).then(data => {
                 console.log(data);
@@ -40,6 +61,7 @@ const Reviews = () => {
                         key={review._id}
                         review={review}
                         handleDelete={handleDelete}
+                        handleUpdate= {handleUpdate}
                     >
                     </ReviewRows>)
             }

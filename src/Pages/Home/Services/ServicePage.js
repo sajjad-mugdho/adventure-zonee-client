@@ -5,7 +5,7 @@ import ServiceCard from './ServiceCard/ServiceCard';
 const ServicePage = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services-page')
+        fetch('https://adventure-zonee-assignment-11-server.vercel.app/services-page')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

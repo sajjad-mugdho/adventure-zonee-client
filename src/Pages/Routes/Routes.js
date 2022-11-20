@@ -35,7 +35,7 @@ const router = createBrowserRouter([
            {
             path: '/services/:id',
             element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-            loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+            loader: ({params}) => fetch(`https://adventure-zonee-assignment-11-server.vercel.app/services/${params.id}`)
            },
            {
             path: '/reviews',
